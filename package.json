@@ -3,13 +3,31 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --no-lint",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@coreui/coreui": "^5.2.0",
+    "@coreui/vue": "^5.4.1",
+    "@coreui/vue-pro": "^5.10.0",
+    "@faker-js/faker": "^9.6.0",
+    "@vuepic/vue-datepicker": "^11.0.1",
+    "apexcharts": "^4.5.0",
+    "autoprefixer": "^10.4.21",
+    "axios": "^1.8.3",
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "pinia": "^3.0.1",
+    "postcss": "^8.5.3",
+    "postcss-loader": "^8.1.1",
+    "tailwindcss": "3",
+    "vue": "^3.2.13",
+    "vue-apexcharts": "^1.7.0",
+    "vue-date-range-picker": "^1.0.1",
+    "vue-datepicker-next": "^1.0.3",
+    "vue-router": "^4.5.0",
+    "vue3-apexcharts": "^1.8.0",
+    "vue3-date-time-picker": "^2.8.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
