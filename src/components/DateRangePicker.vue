@@ -58,7 +58,7 @@ const dateChanged = computed(() => {
   );
 });
 
-// ✅ Apply selected date range
+// Apply selected date range
 const applyDateSelection = () => {
   console.log(formatDate(vStartDate.value));
 

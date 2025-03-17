@@ -12,7 +12,7 @@ export function useBitcoinData() {
     endDate: route.query.endDate || null,
   });
 
-  const formatDate = (date) => date.toLocaleDateString("sv-SE"); // ✅ Keeps YYYY-MM-DD
+  const formatDate = (date) => date.toLocaleDateString("sv-SE"); // Keeps YYYY-MM-DD
 
   // Initialize on first load (if no query params, use last 7 days)
   const checkInitialQuery = async () => {
@@ -40,12 +40,11 @@ export function useBitcoinData() {
     fetchData(); // Fetch data after setting the range
   };
 
-  // ✅ Fetch Bitcoin data based on selected range
+  // Fetch Bitcoin data based on selected range
   const fetchData = async () => {
     const { startDate, endDate } = customDateRange.value;
     if (!startDate || !endDate) return;
 
-    console.log("📡 Fetching data for:", { startDate, endDate });
 
     bitcoinStore.bitcoinData = [];
     await bitcoinStore.fetchBitcoin(startDate, endDate);

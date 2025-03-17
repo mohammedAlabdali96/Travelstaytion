@@ -13,10 +13,8 @@ import DateRangePicker from "@/components/DateRangePicker.vue";
 
 const { checkInitialQuery } = useBitcoinData();
 
-// ✅ Wait for Router Ready & Check Query Before Fetching Data
 onMounted(async () => {
   await checkInitialQuery();
 });
 
-// ✅ Handle Date Selection & Update URL
 </script>

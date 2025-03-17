@@ -1,8 +1,11 @@
 import axios from "axios";
+import { useErrorStore } from "@/store/errorStore";
 
 const API_URL = "https://data-api.coindesk.com/index/cc/v1/historical/days/eod";
 
 export async function getBitcoinHistoricalData(startDate, endDate) {
+  const errorStore = useErrorStore();
+
   try {
     const numberOfDays =
       Math.floor(
@@ -25,17 +28,18 @@ export async function getBitcoinHistoricalData(startDate, endDate) {
       !response.data.Data ||
       response.data.Data.length === 0
     ) {
-      // console.warn("⚠️ No data returned from the API.");
+      errorStore.setError("No Bitcoin data available. Please try again later.");
       return [];
     }
 
-    // console.log("📊 Bitcoin Data:", response.data.Data);
     return response.data.Data;
   } catch (error) {
     console.error(
-      "❌ Error fetching Bitcoin data:",
+      "Error fetching Bitcoin data:",
       error?.response?.data || error.message
     );
+    errorStore.setError("An unexpected error occurred." || error?.response?.data || error.message);
+
     return [];
   }
 }

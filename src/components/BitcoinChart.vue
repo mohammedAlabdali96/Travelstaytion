@@ -2,10 +2,8 @@
   <div>
     <h2 class="text-xl font-bold text-center">Bitcoin Price Chart</h2>
 
-    <p v-if="bitcoinStore.loading">Loading Bitcoin Data...</p>
-    <p v-if="bitcoinStore.error" class="text-red-500">
-      {{ bitcoinStore.error }}
-    </p>
+    <LoadingSpinner v-if="bitcoinStore.loading" />
+
 
     <apexchart
       v-if="series.length && !bitcoinStore.loading"
@@ -20,6 +18,9 @@
 <script setup>
 import { ref, watch } from "vue";
 import { useBitcoinStore } from "@/store/bitcoinStore";
+import LoadingSpinner from "@/components/LoadingSpinner.vue";
+
+
 
 const bitcoinStore = useBitcoinStore();
 const series = ref([]);
@@ -77,7 +78,6 @@ const chartOptions = ref({
 watch(
   () => bitcoinStore.bitcoinData,
   (data) => {
-    // console.log("📊 Raw Data:", data);
 
     if (data.length) {
       const formattedDates = data.map((d) => {
