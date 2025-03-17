@@ -7,17 +7,17 @@ yarn install
 
 ### Compiles and hot-reloads for development
 ```
-yarn serve
+yarn run serve
+```
+
+### In case you want to run the app and host it on your locall machine and use the "http://<your_ip_address>" to access it use:  
+```
+sudo yarn run serve
 ```
 
 ### Compiles and minifies for production
 ```
 yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
 ```
 
 ### Customize configuration
