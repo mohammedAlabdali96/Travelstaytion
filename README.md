@@ -20,5 +20,10 @@ sudo yarn run serve
 yarn build
 ```
 
+### Run the Test
+```
+yarn run jest
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
